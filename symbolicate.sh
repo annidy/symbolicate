@@ -21,7 +21,7 @@ function checkUUIDAndExec()
 	LOG_PATH=$1
 	APP_PATH=$2
 
-	if [ $(echo "$APP_PATH" | grep "\.app\.dsym") ]; then
+	if [ $(echo "$APP_PATH" | grep -i "\.app\.dsym") ]; then
 		# Find raw UUID when file is .app.dsym
 		APP_UUID=$(dwarfdump --uuid $APP_PATH)
 	elif [ $(echo "$APP_PATH" | grep "\.app") ]; then
